@@ -26,11 +26,20 @@ AF086833.fasta
 
 The analysis pipeline was performed using the following tools:
 
-- BWA – read alignment
-- Samtools – file processing and indexing
-- FreeBayes – variant calling
-- SnpEff – functional annotation of variants
-- R – statistical analysis and visualization
+- BWA - read alignment
+- Samtools - file processing and indexing
+- FreeBayes - variant calling
+- SnpEff - functional annotation of variants
+- R - statistical analysis and visualization
+
+### R packages used
+
+- ggplot2
+- Gviz
+- VariantAnnotation
+- kableExtra
+
+---
 
 ### R packages used
 
