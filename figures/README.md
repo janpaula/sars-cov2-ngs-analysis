@@ -5,7 +5,6 @@ All figures were produced in R using the packages ggplot2, Gviz, and VariantAnno
 
 These visualizations summarize key aspects of the sequencing analysis, including variant distribution, sequencing depth, and allele frequency patterns across the viral genome.
 
-===
 ## Figure List
 
 # Genome Coverage Plot
