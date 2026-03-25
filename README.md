@@ -137,9 +137,9 @@ Visualization and report
 
 ## Example Figures
 The repository includes graphical summaries of the analysis:
-- genome coverage plot ![Genome Coverage](figures/GenomeCoverage.png)
-- variant Manhattan plot ![Manhattan Plot](Plot3MutationsAcrossSarsCov2.png)
-- allele frequency histogram ![Allelic Frequency Histogram](figures/allelicFrequency.png)
+- Genome Coverage Plot ![Genome Coverage](figures/GenomeCoverage.png)
+- Variant Manhattan Plot ![Manhattan Plot](figures/Plot3MutationsAcrossSarsCov2.png)
+- Allelic Frequency Histogram ![Allelic Frequency Histogram](figures/allelicFrequency.png)
 
 These visualizations allow rapid inspection of mutation distribution and sequencing quality across the viral genome.
 
