@@ -1,20 +1,26 @@
+
 # SARS-CoV-2 Variant Analysis using NGS Data
 
+Bioinformatics | NGS | Variant Calling | SARS-CoV-2
+
 ## Overview
+This repository contains a bioinformatics workflow for the analysis of Next Generation Sequencing (NGS) data from the SARS-CoV-2 genome.
 
-This repository contains a bioinformatics workflow for the analysis of Next Generation Sequencing (NGS) data from SARS-CoV-2.
-
-The dataset analyzed corresponds to viral genomic data generated in 2020, during the early phase of the COVID-19 pandemic.
+The dataset analyzed corresponds to viral genomic data generated during the early phase of the COVID-19 pandemic.
 
 The objective of this project is to identify nucleotide substitutions in the viral genome using a reference-based alignment and variant calling pipeline, as well as to evaluate sequencing coverage and allele frequency distribution across the genome.
 
-This project demonstrates a practical application of bioinformatics tools for viral genome analysis.
+This project demonstrates a practical application of bioinformatics tools for viral genome analysis and variant interpretation.
+
+---
 
 ## Reference Genome
 
 The analysis uses the following reference genome:
 
 AF086833.fasta
+
+---
 
 ## Tools and Software
 
@@ -23,81 +29,93 @@ The analysis pipeline was performed using the following tools:
 - BWA – read alignment
 - Samtools – file processing and indexing
 - FreeBayes – variant calling
+- SnpEff – functional annotation of variants
 - R – statistical analysis and visualization
 
-R packages used:
+### R packages used
 
 - ggplot2
 - Gviz
 - VariantAnnotation
 - kableExtra
 
+---
+
 ## Workflow
 
 The analysis pipeline consists of the following steps:
 
-### 1. Reference genome indexing
-The SARS-CoV-2 reference genome was indexed using BWA.
+1. Reference genome indexing using BWA
+   The SARS-CoV-2 reference genome was indexed using BWA.
+     
+2. Read alignment to the reference genome using BWA MEM
+   Sequencing reads were aligned to the reference genome using BWA MEM.
+     
+3. SAM/BAM processing using Samtools
+   Alignment files were converted, sorted, and indexed using SAMtools.
+   
+4. Variant calling 
+   Genomic variants were detected using FreeBayes.
+   
+5. Variant analysis in R
+   The resulting VCF file was analyzed using R to evaluate:
+   - variant genomic positions
+   - sequencing depth
+   - allele frequency
+   - mutation distribution across the genome
+     
+6. Visualization
+   The following plots were generated:
+   - Genome coverage plot
+   - Manhattan plot of detected variants
+   - Allele frequency distribution
 
-### 2. Read alignment
-Sequencing reads were aligned to the reference genome using BWA MEM.
+---
 
-### 3. SAM/BAM processing
-Alignment files were converted, sorted, and indexed using Samtools.
-
-### 4. Variant calling
-Variants were identified using FreeBayes.
-
-### 5. Variant analysis
-The VCF file was analyzed in R to evaluate:
-
-- variant positions
-- sequencing depth
-- allele frequency
-- variant distribution across the genome
-  
-### 6. Visualization
-
-The following visualizations were generated:
-
-- Manhattan plot of genomic variants
-- Genome coverage plot
-- Allele frequency distribution
- 
 ## Repository Structure
 
 sars-cov2-ngs-analysis/
 
 data/
-Reference genome
+    reference genome and raw sequencing data
 
 scripts/
-Pipeline scripts and R analysis scripts
+    variant_analysis.R
+    sra_explorer_fastq_download.sh
 
 results/
-Variant files and processed outputs
+    annotated_variants.vcf
+    spike_mutations.vcf
+    snpEff_genes.txt
+    variant_count.txt
+    mean_coverage.txt
+    mapping_stats.txt
 
 figures/
-Generated plots
+    generated plots
 
 report/
-PDF report containing the full analysis
+    final PDF report describing the full analysis
 
+---
 
-## Work flow
+## Workflow Summary
 
-FASTQ
- ↓
-BWA alignment
- ↓
-SAM/BAM processing
- ↓
-FreeBayes variant calling
- ↓
-VCF analysis in R
- ↓
-Visualization
+FASTQ  
+↓  
+BWA alignment  
+↓  
+SAM/BAM processing  
+↓  
+FreeBayes variant calling  
+↓  
+SnpEff variant annotation  
+↓  
+Variant analysis in R  
+↓  
+Visualization and report
 
+---
 
 ## Example Variant Calls
 
@@ -106,21 +124,40 @@ Visualization
 | 5876 | C | T | 2 | FreeBayes |
 | 5954 | T | C | 2 | FreeBayes |
 
+---
+
 ## Example Figures
-
 The repository includes graphical summaries of the analysis:
+- genome coverage plot
+- variant Manhattan plot
+- allele frequency histogram
 
-- Genome coverage plot
-- Variant Manhattan plot
-- Allele frequency distribution
+These visualizations allow rapid inspection of mutation distribution and sequencing quality across the viral genome.
+
+---
 
 ## Future Improvements
 
 Possible improvements for this pipeline include:
 
-- Functional annotation of variants
-- Comparison with global SARS-CoV-2 mutation databases
-- Phylogenetic analysis of detected variants
+functional annotation of variants
+comparison with global SARS-CoV-2 mutation databases
+phylogenetic analysis
+integration with viral lineage classification tools
+
+---
+
+## Results
+
+The repository includes processed outputs from the analysis, such as:
+
+- annotated variant files (VCF)
+- spike gene mutations
+- coverage statistics
+- mapping statistics
+- variant count summaries
+
+---
 
 ## Author
 
