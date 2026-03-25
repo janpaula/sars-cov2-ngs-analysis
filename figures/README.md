@@ -13,9 +13,9 @@ This plot shows the sequencing depth across the SARS-CoV-2 genome.
 
 It allows evaluation of:
 
-regions with high or low coverage
-uniformity of sequencing
-potential gaps in read alignment
+ - regions with high or low coverage
+ - uniformity of sequencing
+ - potential gaps in read alignment
 
 Coverage values were derived from the BAM alignment file using SAMtools.
 
@@ -27,9 +27,9 @@ Each point represents a variant identified by the variant calling pipeline.
 
 The Manhattan-style visualization helps identify:
 
- -clusters of mutations
- -genomic regions with variant accumulation
- -overall distribution of detected substitutions
+ - clusters of mutations
+ - genomic regions with variant accumulation
+ - overall distribution of detected substitutions
  
 
 # Allele Frequency Distribution
