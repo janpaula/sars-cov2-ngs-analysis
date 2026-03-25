@@ -137,6 +137,7 @@ Visualization and report
 
 ## Example Figures
 The repository includes graphical summaries of the analysis:
+
 - Genome Coverage Plot ![Genome Coverage](figures/GenomeCoverage.png)
 - Variant Manhattan Plot ![Manhattan Plot](figures/Plot3MutationsAcrossSarsCov2.png)
 - Allelic Frequency Histogram ![Allelic Frequency Histogram](figures/allelicFrequency.png)
